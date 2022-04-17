@@ -1,0 +1,73 @@
+table hiring_managers{
+  id uuid [pk]
+  name text
+  candidate_id uuid
+  template_id uuid
+  scenario_id uuid
+}
+
+table candidates{
+  id uuid [pk]
+  name text
+}
+
+ref: hiring_managers.candidate_id  < candidates.id
+
+enum difficulty_type{
+  entry_level
+  intermediate_level
+  expert_level
+}
+
+table hiring_managers_accounts{
+  id uuid [pk]
+  user_name text
+  encrypted_password text
+  hiring_manager_id uuid
+}
+
+table candidates_accounts{
+  id uuid [pk]
+  user_name text
+  encrypted_password text
+  candidate_id uuid
+}
+
+ref: hiring_managers_accounts.hiring_manager_id - hiring_managers.id
+ref: candidates_accounts.candidate_id - candidates.id
+
+table templates{
+  id uuid [pk]
+  name text
+  difficulty difficulty_type
+  scenario_id uuid
+}
+table scenarios{
+  id uuid [pk]
+  name text
+  language text
+  prompt text
+  solution text
+}
+
+ref: templates.scenario_id < scenarios.id
+
+enum status_type{
+  sent
+  finished
+}
+
+table invitations{
+  id uuid [pk]
+  hiring_manager_id uuid
+  candidate_id uuid
+  template_id uuid
+  status status_type
+}
+
+ref: invitations.hiring_manager_id > hiring_managers.id
+ref: invitations.candidate_id > candidates.id
+ref: invitations.template_id > templates.id
+ref: hiring_managers.template_id < templates.id
+ref: hiring_managers.scenario_id < scenarios.id
+

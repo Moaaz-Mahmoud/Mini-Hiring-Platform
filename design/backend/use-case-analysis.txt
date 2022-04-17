@@ -1,0 +1,21 @@
+As a hiring manager, I can:
+	• create a new assessment template
+		○ set the name
+		○ set the description
+		○ choose the scenarios to test for the role
+	• create a new scenario
+		○ set the name
+		○ create the prompt
+		○ specify the difficulty
+		○ specify the language used (Python/plain text)
+	• invite a candidate to an assessment
+	• view the invitations status (sent - in progress - finished)
+	• view the results of the finished assessments, this includes:
+		○ the role
+		○ the candidate's id and name
+		○ the candidate's score
+
+As a candidate, I can:
+	• 
+	• 
+	• 
