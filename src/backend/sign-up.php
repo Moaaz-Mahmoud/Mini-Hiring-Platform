@@ -48,5 +48,6 @@ $query =
 $query = $query . "\", " . $id . ");";
 mysqli_query($conn, $query);
 
+$mysqli -> close();
 
 ?>

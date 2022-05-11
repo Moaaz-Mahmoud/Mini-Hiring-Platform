@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <!-- Template By CodingNepal - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
@@ -35,3 +38,11 @@
           </div>
     </body>
 </html>
+
+<?php
+echo "<br><br><br>";
+print '<pre>';
+var_dump( $_GET );
+
+
+?>
