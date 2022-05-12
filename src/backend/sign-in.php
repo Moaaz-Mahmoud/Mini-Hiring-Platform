@@ -3,6 +3,7 @@
 $username = strtolower($_POST["username"]);
 $password = strtolower($_POST["password"]);
 $_SESSION['username'] = $username;
+$_SESSION['password'] = $password;
 
 echo $_POST["username"] . "--" . $_POST["password"] . "--" . "<br>";
 
@@ -29,7 +30,7 @@ if($valid != 1){
 }
 
 // Load the page
-header("Location: ..\\frontend\\hm-dashboard.php");
+header("Location: hm-dashboard.php");
 
 
 $mysqli -> close();
