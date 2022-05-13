@@ -1,20 +1,20 @@
 <?php
 
-$username = strtolower($_POST["username"]);
-$password = strtolower($_POST["password"]);
 session_start();
-$_SESSION['username'] = $username;
-
-echo $_POST["username"] . "--" . $_POST["password"] . "--" . "<br>";
-
 // Connect
 $conn = mysqli_connect("localhost", "root", "");
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
+mysqli_query($conn, "USE hiring_platform;");
+
+$username = strtolower($_POST["username"]);
+$password = strtolower($_POST["password"]);
+$_SESSION['username'] = $username;
+
+echo $_POST["username"] . "--" . $_POST["password"] . "--" . "<br>";
 
 // Validate the username and password
-$valid = mysqli_query($conn, "USE hiring_platform;");
 $query = "
   SELECT  COUNT(*)
   FROM    hiring_managers_accounts

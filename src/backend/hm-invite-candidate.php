@@ -19,13 +19,13 @@
             </div>
         </nav>
         <div class="center">
-            <form>
+            <form method="post" action="save-invitation.php">
                 <div>
                     <label>Candidate ID</label> <br>
-                    <input> <br>
+                    <input name="candidate-id"> <br>
                     <label>Assessment</label> <br>
-                    <select>
-                        
+                    <select name="assessment">
+                        <option value="Developer">Developer</option>
                     </select> <br>
                 </div>
                 <div class="btns">
@@ -36,3 +36,9 @@
     </body>
     <script src="hm-invite-candidate.js"></script>
 </html>
+
+<?php
+
+session_start();
+
+?>

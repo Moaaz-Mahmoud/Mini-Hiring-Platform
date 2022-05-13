@@ -51,6 +51,20 @@
 <?php
 
 session_start();
+// Connect
+$conn = mysqli_connect("localhost", "root", "");
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_query($conn, "USE hiring_platform;");
+
+$hiring_manager_id = "SELECT id FROM hiring_managers WHERE name = \"" . $_SESSION['username'] . "\";";
+// echo $hiring_manager_id . "<br>";
+$hiring_manager_id = mysqli_query($conn, $hiring_manager_id);
+$hiring_manager_id = mysqli_fetch_assoc($hiring_manager_id)['id'];
+
+$_SESSION['hiring_manager_id'] = $hiring_manager_id;
+
 // var_dump($_SESSION);
 
 ?>
