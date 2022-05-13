@@ -134,10 +134,10 @@ nav .menu{
   background-color: hsl(214, 100%, 34%);
 }
 #add-scen-btn{
-  background-color: hsl(214, 100%, 50%);
+  background-color: hsl(271, 100%, 50%);
   color: white;
   border-radius: 10px;
 }
 #add-scen-btn:hover{
-  background-color: hsl(214, 100%, 34%);
+  background-color: hsl(271, 100%, 34%);
 }

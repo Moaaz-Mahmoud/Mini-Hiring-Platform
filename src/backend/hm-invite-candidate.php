@@ -4,9 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create Template</title>
-        <link rel="stylesheet" href="hm-create-template.css">
-        <script src="hm-create-template.js"></script>
+        <title>Invite Candidate</title>
+        <link rel="stylesheet" href="hm-invite-candidate.css">
     </head>
     <body>
         <nav>
@@ -22,18 +21,18 @@
         <div class="center">
             <form>
                 <div>
-                    <label>Name</label> <br>
+                    <label>Candidate ID</label> <br>
                     <input> <br>
-                    <label>Description</label> <br>
-                    <input> <br>
-                    <label>Scenarios</label> <br>
-                    <label>Scenario #1</label>
-                    <input type="checkbox">
+                    <label>Assessment</label> <br>
+                    <select>
+                        
+                    </select> <br>
                 </div>
                 <div class="btns">
-                    <button id="save-btn">Save</button>     
+                    <button id="send-btn">Send</button>     
                 </div>    
             </form>
         </div>
     </body>
+    <script src="hm-invite-candidate.js"></script>
 </html>

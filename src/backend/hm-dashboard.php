@@ -7,11 +7,11 @@
         <title>Mini Hiring Platform – Home</title>
         <link rel="stylesheet" href="hm-dashboard.css">
         <script>
-            function createScenarioBtn(){
-                window.location.href = "hm-create-template.html"
+            function createTemplateBtn(){
+                window.location.href = "hm-create-template.php"
             }
             function inviteCandidateBtn(){
-                window.location.href = "hm-invite-candidate.html"
+                window.location.href = "hm-invite-candidate.php"
             }
             function createScenarioBtn(){
                 window.location.href = "hm-create-scenario.php"
@@ -32,7 +32,7 @@
         </nav>
         <div class="center">
             <div class="btns">
-                <button id="add-temp-btn" onclick="createScenarioBtn()">Create Template</button>
+                <button id="add-temp-btn" onclick="createTemplateBtn()">Create Template</button>
                 <button id="inv-cand-btn" onclick="inviteCandidateBtn()">Invite Candidate</button>
                 <button id="add-scen-btn" onclick="createScenarioBtn()">Create Scenario</button>
             </div>
@@ -50,5 +50,7 @@
 
 <?php
 
+session_start();
+// var_dump($_SESSION);
 
 ?>

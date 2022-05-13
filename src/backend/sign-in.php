@@ -2,8 +2,8 @@
 
 $username = strtolower($_POST["username"]);
 $password = strtolower($_POST["password"]);
+session_start();
 $_SESSION['username'] = $username;
-$_SESSION['password'] = $password;
 
 echo $_POST["username"] . "--" . $_POST["password"] . "--" . "<br>";
 
