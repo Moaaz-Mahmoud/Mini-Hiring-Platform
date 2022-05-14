@@ -47,7 +47,7 @@ session_start();
             // Scenario name
             let scenario = document.createElement('label')
             scenario.setAttribute('id','scenario'+i)
-            scenario.innerHTML = 'Meow Developer' + i
+            scenario.innerHTML = 'Scenario #' + i
             // Checkbox
             const checkbox = document.createElement('input')
             checkbox.type = "checkbox"

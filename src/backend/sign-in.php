@@ -8,6 +8,7 @@ if (!$conn) {
 }
 mysqli_query($conn, "USE hiring_platform;");
 
+// Authentication
 $username = strtolower($_POST["username"]);
 $password = strtolower($_POST["password"]);
 $_SESSION['username'] = $username;
