@@ -22,7 +22,7 @@ SELECT inv.candidate_id, tmp.name
 FROM invitations inv
 JOIN templates tmp
 ON inv.template_id = tmp.id
-WHERE hiring_manager_id = $hiring_manager_id AND
+WHERE inv.hiring_manager_id = $hiring_manager_id AND
       inv.invitation_status = 'sent';
 ";
 $sent_invitations = mysqli_query($conn, $sent_invitations);
@@ -32,7 +32,7 @@ SELECT inv.candidate_id, tmp.name, inv.score
 FROM invitations inv
 JOIN templates tmp
 ON inv.template_id = tmp.id
-WHERE hiring_manager_id = $hiring_manager_id AND
+WHERE inv.hiring_manager_id = $hiring_manager_id AND
       inv.invitation_status = 'finished';
 ";
 $finished_invitations = mysqli_query($conn, $finished_invitations);
