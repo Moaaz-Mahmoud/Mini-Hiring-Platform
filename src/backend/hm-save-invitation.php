@@ -4,6 +4,7 @@ session_start();
 
 $candidate_id = $_POST['candidate-id'];
 $assessment = $_POST['assessment'];
+echo $assessment . "<br>";
 $hiring_manager_id = $_SESSION['hiring_manager_id'];
 
 // Connect
@@ -17,21 +18,13 @@ mysqli_query($conn, "USE hiring_platform;");
 $status = "sent";
 
 $template_id = "SELECT id FROM templates WHERE name = '$assessment';";
-echo $template_id . "<br>";
 $template_id = mysqli_query($conn, $template_id);
-var_dump(mysqli_fetch_assoc($template_id));
 $template_id = mysqli_fetch_assoc($template_id)['id'];
+var_dump($template_id);
 
 $id = "SELECT COUNT(*) FROM invitations";
 $id = mysqli_query($conn, $id);
 $id = mysqli_fetch_assoc($id)['COUNT(*)'] + 1;
-echo $id . "<br><br><br>";
-
-echo  $candidate_id      . "<br>"
-    . $hiring_manager_id . "<br>"
-    . $id                . "<br>"
-    . $status            . "<br>"
-    . $template_id       . "<br>";
 
 // Save the assessment
 $query = "
@@ -46,5 +39,7 @@ VALUES($id,
        $template_id,
       '$status');
 ";
+echo $query . "<br>" . "<br>" . "<br>";
+// var_dump($_POST);
 
 ?>

@@ -12,7 +12,7 @@
         <nav>
             <div class="menu">
             <div class="logo">
-                <a href="home.html">Mini Hiring Platform</a>
+                <a href="hm-home.html">Mini Hiring Platform</a>
             </div>
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -20,7 +20,7 @@
             </div>
         </nav>
         <div class="center">
-            <form method="post" action="save-scenario.php">
+            <form method="post" action="hm-save-scenario.php">
                 <div>
                     <label>Name</label> <br>
                     <input name="name"> <br>

@@ -1,6 +1,22 @@
 <?php
 
 session_start();
+$conn = mysqli_connect("localhost", "root", "");
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_query($conn, "USE hiring_platform;");
+
+$username = $_SESSION['username'];
+
+$scenarios = "
+SELECT sc.name
+FROM scenarios sc
+JOIN hiring_managers hm
+ON sc.hiring_manager_id = hm.id
+WHERE hm.name = '$username';
+";
+$scenarios = mysqli_query($conn, $scenarios);
 
 ?>
 
@@ -16,7 +32,7 @@ session_start();
         <nav>
             <div class="menu">
             <div class="logo">
-                <a href="home.html">Mini Hiring Platform</a>
+                <a href="hm-home.html">Mini Hiring Platform</a>
             </div>
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -24,40 +40,31 @@ session_start();
             </div>
         </nav>
         <div class="center">
-            <form method="post" action="save-template.php" id="formm">
+            <form method="post" action="hm-save-template.php" id="formm">
                 <div id="before-submit">
                     <label>Name</label> <br>
-                    <input> <br>
+                    <input name="name"> <br>
                     <label>Description</label> <br>
-                    <input> <br>
+                    <input name="description"> <br>
                     <label>Scenarios</label> <br>
                     <!-- Scenarios with checkboxes go here. See the JS. -->
+                </div>
+                <div>
+                    <?php
+                    while($row = mysqli_fetch_assoc($scenarios)){
+                        $scenario = $row['name'];
+                    ?>
+                        <input value=<?= $scenario?> type="checkbox"><?= $scenario?></input>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="btns">
                     <button id="save-btn">Save</button>     
                 </div>
+                
             </form>
         </div>
     </body>
-    <script>
-        let beforeSubmit = document.getElementById('before-submit')
-
-        // linebreak.innerHTML = "<br>"
-        for (let i = 0; i < 4; i++){
-            // Scenario name
-            let scenario = document.createElement('label')
-            scenario.setAttribute('id','scenario'+i)
-            scenario.innerHTML = 'Scenario #' + i
-            // Checkbox
-            const checkbox = document.createElement('input')
-            checkbox.type = "checkbox"
-            // Linebreak for the next element
-            const linebreak = document.createElement('br')
-            // Add to the form
-            beforeSubmit.appendChild(scenario)
-            beforeSubmit.appendChild(checkbox)
-            beforeSubmit.appendChild(linebreak)
-        }
-    </script>
 </html>
 
