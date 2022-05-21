@@ -33,7 +33,7 @@ $assessments = mysqli_query($conn, $assessments);
         <nav>
             <div class="menu">
             <div class="logo">
-                <a href="hm-home.html">Mini Hiring Platform</a>
+                <a href="home.html">Mini Hiring Platform</a>
             </div>
             <ul>
                 <li><a href="about.html">About</a></li>

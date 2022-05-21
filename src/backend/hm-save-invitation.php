@@ -40,6 +40,6 @@ VALUES($id,
       '$status');
 ";
 echo $query . "<br>" . "<br>" . "<br>";
-// var_dump($_POST);
+mysqli_query($conn, $query);
 
 ?>

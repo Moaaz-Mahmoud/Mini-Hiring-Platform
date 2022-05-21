@@ -4,15 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mini Hiring Platform – Signin</title>
-        <link rel="stylesheet" href="hm-sign-in.css">
+        <title>Mini Hiring Platform – Signup</title>
+        <link rel="stylesheet" href="cd-sign-up.css">
         <!-- <script src=""></script> -->
     </head>
     <body>
         <nav>
             <div class="menu">
                 <div class="logo">
-                    <a href="home.html">Mini Hiring Platform</a>
+                    <a href="cd-home.html">Mini Hiring Platform</a>
                 </div>
                 <ul>
                     <li><a href="about.html">About</a></li>
@@ -21,12 +21,14 @@
         </nav>
         <!-- <div class="img"></div> -->
         <div class="center">
-            <form method="post" class="login-form" action="http://localhost/testing3b-project-hiring-platform/src/backend/hm-sign-in.php">
+            <form method="post" class="register-form" action="http://localhost/testing3b-project-hiring-platform/src/backend/cd-sign-up.php">
                 <label>Username</label><br>
-                <input type="text" name="username" id="Uname" placeholder="JohnDoe123"><br>
+                <input type="text" name="username" id="username" placeholder="JohnDoe123"><br>
                 <label>Password</label><br>
-                <input type="Password" name="password" id="Pass" placeholder=""><br>
-                <input type="submit" value="Login" id="login-input">
+                <input type="Password" name ="password" id="password" placeholder=""><br>
+                <label>Re-type the password</label><br>
+                <input type="Password" name ="password-check" id="password-check" placeholder=""><br>
+                <input type="submit" value="register" id="register-input">
             </form>
         </div>
     </body>

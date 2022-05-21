@@ -32,7 +32,7 @@ $scenarios = mysqli_query($conn, $scenarios);
         <nav>
             <div class="menu">
             <div class="logo">
-                <a href="hm-home.html">Mini Hiring Platform</a>
+                <a href="home.html">Mini Hiring Platform</a>
             </div>
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -49,16 +49,16 @@ $scenarios = mysqli_query($conn, $scenarios);
                     <label>Scenarios</label> <br>
                     <!-- Scenarios with checkboxes go here. See the JS. -->
                 </div>
-                <div>
+                <select name="scenario" multiple="multiple" tabindex="1">
                     <?php
                     while($row = mysqli_fetch_assoc($scenarios)){
                         $scenario = $row['name'];
                     ?>
-                        <input value=<?= $scenario?> type="checkbox"><?= $scenario?></input>
+                        <option value=<?= $scenario?> type="checkbox"><?= $scenario?></option>
                     <?php
                     }
                     ?>
-                </div>
+                </select>
                 <div class="btns">
                     <button id="save-btn">Save</button>     
                 </div>
