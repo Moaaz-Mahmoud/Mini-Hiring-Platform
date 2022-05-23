@@ -59,7 +59,12 @@ $finished_invitations = mysqli_query($conn, $finished_invitations);
         <title>Mini Hiring Platform – Home</title>
         <link rel="stylesheet" href="cd-dashboard.css">
         <script>
-            
+            function hardFrontend(){
+                window.location.href = "hard-frontend.html"
+            }
+            function hardDevOps(){
+                window.location.href = "hard-devops.html"
+            }
         </script>
     </head>
     <body>
@@ -74,11 +79,10 @@ $finished_invitations = mysqli_query($conn, $finished_invitations);
             </div>
         </nav>
         <div class="center">
-            <div class="btns">
-              
-            </div>
-
             <div>
+              <div>
+                <h2>Available Assessments</h2>
+              </div>
               <!-- Sent -->
               <table>
                     <thead>
@@ -88,9 +92,12 @@ $finished_invitations = mysqli_query($conn, $finished_invitations);
                         </tr>
                     </thead>
                     <?php
+                    $i = 0;
                     while($row = mysqli_fetch_assoc($sent_invitations)){
+                        $i = $i + 1;
+                        if($i == 1){
                     ?>
-                    <tr class="clickable">
+                    <tr class="clickable" onclick="hardFrontend()">
                         <td><?= $row['HiringManager']?></td>
                         <td><?= $row['Role']?></td>
                         <?php
@@ -98,9 +105,24 @@ $finished_invitations = mysqli_query($conn, $finished_invitations);
                         ?>
                     </tr>
                     <?php
+                        }
+                        else{
+                    ?>
+                    <tr class="clickable" onclick="hardDevOps()">
+                        <td><?= $row['HiringManager']?></td>
+                        <td><?= $row['Role']?></td>
+                        <?php
+                        // $_SESSION['assessment'] = 
+                        ?>
+                    </tr>
+                    <?php
+                        }
                     }
                     ?>
                 </table>
+                <div>
+                    <h2>Finished Assessments</h2>
+                </div>
                 <!-- Finished -->
                 <table>
                     <thead>
